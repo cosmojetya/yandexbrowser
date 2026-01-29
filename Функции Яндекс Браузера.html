@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функции Яндекс Браузера - Безопасность, AI и Умные Возможности</title>
+    <meta name="description" content="Откройте все функции Яндекс Браузера: нейрозащита, AI помощник Алиса, видеофункции, кэшбек и многое другое.">
+    <style>
+        :root {
+            --color-primary: #FF3D00;
+            --color-primary-dark: #E63900;
+            --color-text-primary: #0E1425;
+            --color-text-secondary: #65687D;
+            --color-bg: #FFFFFF;
+            --color-bg-light: #F5F5F5;
+            --color-accent: #2185D0;
+            --color-success: #27AE60;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-2xl: 64px;
+            --radius: 8px;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'YS Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--color-text-primary);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #FF3D00 0%, #FF6B35 100%);
+            color: white;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FF3D00 0%, #FF6B35 100%);
+            color: white;
+            padding: var(--spacing-2xl) var(--spacing-sm);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 6vw, 48px);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 3vw, 20px);
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.95;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: var(--spacing-2xl) var(--spacing-sm);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-text-primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .feature-card {
+            background: var(--color-bg);
+            border: 1px solid #E8E8E8;
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-primary);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .feature-content {
+            padding: var(--spacing-lg);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-card h2 {
+            font-size: 20px;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-primary);
+        }
+
+        .feature-card p {
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Full Width Feature Section */
+        .feature-full {
+            background: var(--color-bg-light);
+            padding: var(--spacing-2xl) var(--spacing-sm);
+            margin: var(--spacing-2xl) 0;
+        }
+
+        .feature-full-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .feature-full-text h3 {
+            font-size: 28px;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-primary);
+        }
+
+        .feature-full-text p {
+            color: var(--color-text-secondary);
+            font-size: 16px;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+
+        .feature-full-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Benefit List */
+        .benefit-list {
+            list-style: none;
+            margin-top: var(--spacing-md);
+        }
+
+        .benefit-list li {
+            padding: var(--spacing-sm) 0;
+            padding-left: 32px;
+            position: relative;
+            color: var(--color-text-secondary);
+            font-size: 15px;
+        }
+
+        .benefit-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF3D00 0%, #FF6B35 100%);
+            color: white;
+            display: inline-block;
+            margin-top: var(--spacing-md);
+            box-shadow: 0 4px 12px rgba(255, 61, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #E63900 0%, #FF5722 100%);
+            box-shadow: 0 6px 16px rgba(255, 61, 0, 0.4);
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .comparison-card {
+            background: white;
+            border: 1px solid #E8E8E8;
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .comparison-card h3 {
+            font-size: 18px;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-primary);
+        }
+
+        .comparison-icon {
+            font-size: 48px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            color: white;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.8;
+            margin-top: var(--spacing-2xl);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-full-content {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-full-text h3 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🚀 Яндекс Браузер</div>
+            <nav class="header-nav">
+                <a href="#features" class="nav-link">Функции</a>
+                <a href="#security" class="nav-link">Безопасность</a>
+                <a href="#ai" class="nav-link">AI & Умные</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Откройте все возможности Яндекс Браузера</h1>
+            <p>Безопасность, AI помощник Алиса, видеофункции и много других умных возможностей в одном браузере</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Основные функции</h2>
+            <div class="features-grid">
+                <!-- Нейрозащита -->
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1614008375890-cb53b6c5f8d5?w=400&h=200&fit=crop" alt="Нейрозащита" class="feature-image">
+                    <div class="feature-content">
+                        <div class="feature-icon">🛡️</div>
+                        <h2>Нейрозащита</h2>
+                        <p>Умная система защиты с использованием искусственного интеллекта. Защита от вредоносов, фишинга и опасных сайтов в реальном времени.</p>
+                    </div>
+                </div>
+
+                <!-- Нейроредактор -->
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=200&fit=crop" alt="Нейроредактор" class="feature-image">
+                    <div class="feature-content">
+                        <div class="feature-icon">✍️</div>
+                        <h2>Нейроредактор</h2>
+                        <p>AI помощник для создания и улучшения текстов. Исправляет ошибки, улучшает стиль и помогает с переписыванием контента.</p>
+                    </div>
+                </div>
+
+                <!-- Живые голоса -->
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?w=400&h=200&fit=crop" alt="Живые голоса" class="feature-image">
+                    <div class="feature-content">
+                        <div class="feature-icon">🎤</div>
+                        <h2>Живые голоса</h2>
+                        <p>Естественное произношение текстов и озвучивание контента. Реалистичные голоса помощника Алисы.</p>
+                    </div>
+                </div>
+
+                <!-- Пересказ видео -->
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=200&fit=crop" alt="Пересказ видео" class="feature-image">
+                    <div class="feature-content">
+                        <div class="feature-icon">🎬</div>
+                        <h2>Пересказ видео</h2>
+                        <p>Быстрое резюме видеоконтента. Узнайте суть видео без просмотра целиком.</p>
+                    </div>
+                </div>
+
+                <!-- Отзывы на магазины -->
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=200&fit=crop" alt="Отзывы на магазины" class="feature-image">
+                    <div class="feature-content">
+                        <div class="feature-icon">⭐</div>
+                        <h2>Отзывы на магазины</h2>
+                        <p>Читайте реальные отзывы покупателей о товарах. Проверяйте рейтинги перед покупкой.</p>
+                    </div>
+                </div>
+
+                <!-- Режим II агента -->
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1677442d019cecf8978981e41918e14fdf3b67521?w=400&h=200&fit=crop" alt="Режим II агента" class="feature-image">
+                    <div class="feature-content">
+                        <div class="feature-icon">🤖</div>
+                        <h2>Режим AI агента</h2>
+                        <p>Автоматизированный помощник Алиса помогает в заполнении форм и выполнении задач.</p>
+                    </div>
+                </div>
+
+                <!-- Чат с Алисой -->
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1637953928322-f01425c01a82?w=400&h=200&fit=crop" alt="Чат с Алисой AI" class="feature-image">
+                    <div class="feature-content">
+                        <div class="feature-icon">💬</div>
+                        <h2>Чат с Алисой AI</h2>
+                        <p>Прямое общение с умным помощником Алисой. Получайте советы, информацию и помощь в реальном времени.</p>
+                    </div>
+                </div>
+
+                <!-- Видеофункции -->
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1611339555312-e607c25352ba?w=400&h=200&fit=crop" alt="Видеофункции" class="feature-image">
+                    <div class="feature-content">
+                        <div class="feature-icon">📹</div>
+                        <h2>Умные видеофункции</h2>
+                        <p>Улучшение качества видео, интеллектуальное сжатие, оптимизация потока.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Features Full Width -->
+    <section id="security" class="feature-full">
+        <div class="feature-full-content">
+            <div class="feature-full-text">
+                <h3>Полная безопасность с Нейрозащитой</h3>
+                <p>Яндекс Браузер использует передовые технологии искусственного интеллекта для защиты вашей конфиденциальности и безопасности.</p>
+                <ul class="benefit-list">
+                    <li>Защита от вредоносных сайтов и вирусов</li>
+                    <li>Блокировка фишинга и мошенничества</li>
+                    <li>Зашифрованные соединения по умолчанию</li>
+                    <li>Контроль доступа к личным данным</li>
+                    <li>Постоянное обновление баз защиты</li>
+                </ul>
+            </div>
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" alt="Безопасность" class="feature-full-image">
+        </div>
+    </section>
+
+    <!-- AI Features Full Width -->
+    <section id="ai" class="feature-full" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color: white;">
+        <div class="feature-full-content" style="color: white;">
+            <img src="https://images.unsplash.com/photo-1677442d019cecf8978981e41918e14fdf3b67521?w=500&h=400&fit=crop" alt="AI Помощник" class="feature-full-image">
+            <div class="feature-full-text">
+                <h3 style="color: white;">Помощник Алиса - Ваш личный AI</h3>
+                <p style="color: rgba(255,255,255,0.9);">Умный помощник Алиса встроена прямо в браузер. Она поможет вам с поиском, ответит на вопросы и автоматизирует рутинные задачи.</p>
+                <ul class="benefit-list" style="color: rgba(255,255,255,0.85);">
+                    <li style="color: rgba(255,255,255,0.85);">Голосовой поиск и запросы</li>
+                    <li style="color: rgba(255,255,255,0.85);">Ответы на вопросы в реальном времени</li>
+                    <li style="color: rgba(255,255,255,0.85);">Автоматизация повторяющихся задач</li>
+                    <li style="color: rgba(255,255,255,0.85);">Персональные рекомендации</li>
+                    <li style="color: rgba(255,255,255,0.85);">Интеграция с сервисами Яндекса</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Features -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Еще больше умных функций</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="comparison-icon">⚡</div>
+                    <h3>Быстрый перенос данных</h3>
+                    <p>Импортируйте закладки, пароли и историю из других браузеров в один клик</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">💰</div>
+                    <h3>Кэшбек и возвраты</h3>
+                    <p>Получайте кэшбек при покупках в интернете через Яндекс Маркет</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">🔍</div>
+                    <h3>Поиск с Алисой</h3>
+                    <p>Голосовой поиск и умные подсказки для быстрого нахождения информации</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">🎨</div>
+                    <h3>Персонализация</h3>
+                    <p>Настройка интерфейса под ваш стиль и предпочтения</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">📱</div>
+                    <h3>Синхронизация</h3>
+                    <p>Синхронизируйте данные между компьютером, планшетом и телефоном</p>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon">🌐</div>
+                    <h3>Многоязычность</h3>
+                    <p>Поддержка множества языков и локализация контента</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: linear-gradient(135deg, #FF3D00 0%, #FF6B35 100%); color: white; padding: var(--spacing-2xl) var(--spacing-sm); text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 32px; margin-bottom: var(--spacing-md);">Готовы к безопасности и умным возможностям?</h2>
+            <p style="font-size: 18px; margin-bottom: var(--spacing-lg); opacity: 0.95;">Скачайте Яндекс Браузер с Алисой AI и получите все эти функции + бонус до 600 рублей</p>
+            <a href="https://yandex.ru/project/browser/bonus/multioffer/affiliate_4prod?source=pWRP8eS1VsC2X59560&partner_string=P89XvN11U6RuE47077" class="btn btn-primary" style="background: white; color: #FF3D00; border: none;">Скачать браузер</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://yandex.ru/legal/browser_agreement/">Лицензионное соглашение</a>
+            <a href="https://yandex.ru/support/">Служба поддержки</a>
+            <a href="https://yandex.ru/privacy/">Политика конфиденциальности</a>
+        </div>
+        <p>&copy; Официальный партнер Яндекс браузера. Реклама</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
